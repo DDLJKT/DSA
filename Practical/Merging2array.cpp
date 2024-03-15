@@ -1,24 +1,40 @@
 #include <iostream.h>
 #include <conio.h>
-void main()
+
+int main()
 {
-    clrscr();
     int a[5], b[5], c[10], i;
-    cout << "Enter 1st array elements";
+    cout << "Enter the first array elements:";
     for (i = 0; i < 5; i++)
     {
         cin >> a[i];
     }
-    cout << "\n Enter 2nd array elements:";
+
+    cout << "\nEnter the second array elements:";
     for (i = 0; i < 5; i++)
     {
         cin >> b[i];
     }
-    cout << "\n the merged array is \n";
+
+    cout<<"\nThe merged array is:\n";
     int temp = 0;
     for (i = 0; i < 10; i++)
     {
         temp++;
+        if (temp <= 5)
+        {
+            c[i] = a[i];
+        }
+        else
+        {
 
-        getch();
+            c[i] = b[i - 5];
+        }
     }
+    for (i = 0; i < 10; i++)
+    {
+        cout << c[i] << " ";
+    }
+
+    return 0;
+}
